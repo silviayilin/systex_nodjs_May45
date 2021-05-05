@@ -1,13 +1,11 @@
-// incorrect implementation
-
-
 const fs = require('fs')
-const path1 = "datax\\info.txt"
+const path1 = "data\\info.txt"
 function FileObject() {
     this.fileName = "";
     this.file_exists = function (callback) {
         console.log("about to open:", this.fileName)
-        fs.open(this.fileName, 'r', function (err, handle) {
+        // fs.open(this.fileName, 'r', function (err, handle) {
+        fs.open(this.fileName, 'r', (err, handle) => {  
             if (err) {
                 console.log("can not open file", this.fileName)
                 callback(err)        
